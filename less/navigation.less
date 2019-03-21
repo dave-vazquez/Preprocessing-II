@@ -1,1 +1,25 @@
-// Navigation Styles here
+header {
+    .flex(@justify: space-between; @align: center);
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 10rem;
+    border-bottom: dashed 2px @navigation-border;
+
+    h2 {
+        font-size: 4.0rem;
+    }
+
+    nav {
+        width: 40%;
+        .flex(@justify: space-around);
+
+        a {
+            font-family: @font-color;
+            font-size: 1.6rem;
+            text-decoration: none;
+            color: @shark;
+            
+        }
+    }
+}
