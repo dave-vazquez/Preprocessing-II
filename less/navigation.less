@@ -1,25 +1,44 @@
 header {
-    .flex(@justify: space-between; @align: center);
-
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 10rem;
     border-bottom: dashed 2px @navigation-border;
+    padding: 1.9rem;
+  
+    .nav-container {
+        .flex(@justify: space-between);
+        max-width: 800px;
+        margin: 0 auto;
+  
+        h2 {
+            font-size: 4rem;
 
-    h2 {
-        font-size: 4.0rem;
-    }
-
-    nav {
-        width: 40%;
-        .flex(@justify: space-around);
-
-        a {
-            font-family: @font-color;
-            font-size: 1.6rem;
-            text-decoration: none;
-            color: @shark;
-            
+            @media @mobile {
+                text-align: center;
+                font-size: 3rem;
+            }
         }
+
+        nav {
+            width: 40%;
+            
+            .flex(@justify: space-around; @align: center);
+        
+            a {
+                font-family: @font-color;
+                font-size: 1.6rem;
+                text-decoration: none;
+                color: @shark;
+            }
+
+            @media @mobile {
+                width: 100%;
+            }
+        }
+
+        @media @mobile {
+            .flex(@direction: column);
+        } 
     }
-}
+
+    @media @mobile {
+        padding: 1.0rem;
+    }
+  }

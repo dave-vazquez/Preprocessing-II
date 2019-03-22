@@ -4,3 +4,30 @@
     justify-content: @justify;
     align-items: @align;
 }
+
+.btn-styles(@width: 200px;) {
+    width: @width;
+    height: 45px;
+    border: 1px solid @button-border;
+    border-radius: 15px;
+    
+    font-family: @button-font;
+    font-size: 1.8rem;
+    color: @white;
+
+    background-color: @button-bg;
+
+    &:hover {
+        background-color: darken(@button-bg, 20%);
+    }
+}
+
+.content-mobile(@newDirection ) {
+    .flex(@direction: @newDirection);
+    width: 100%;
+
+    .text-content, .img-content, img, .destination {
+        width: 100%;
+    }
+}
+
