@@ -1,1 +1,62 @@
-// Mixins in here
+/* Display Mixins */
+.flex(@direction: row, @justify: flex-start, @align: stretch) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+/* Component Mixins */
+.btn-styles(@width: 83%) {
+    width: @width;
+    height: 45px;
+    border: 1px solid @button-border;
+    border-radius: 15px;
+    
+    font-family: @button-font;
+    font-size: 1.8rem;
+    color: @white;
+
+    background-color: @button-bg;
+
+    &:hover {
+        background-color: darken(@button-bg, 20%);
+    }
+}
+
+/* Media Query Mixins */
+.content-tablet(@contentClass: 'default') {
+    padding: 0 2rem;
+
+    & when (@contentClass = '.content-pick') {
+        padding: 3rem 2rem;
+
+        .destination .btn {
+            width: 100%;
+        }
+    }
+}
+
+.content-mobile(@newDirection, @contentClass: 'content-section') {
+    .flex(@direction: @newDirection);
+    width: 100%;
+
+    .text-content, .img-content, img {
+        width: 100%;
+    }
+
+    & when (@contentClass = '.content-pick') {
+        padding: 2rem 4rem;
+
+        .destination { 
+            width: 100%;
+            margin-bottom: 2rem;
+            align-content: flex-end;
+
+            .btn { .btn-styles(100%, ) }
+        }
+    }
+}
+
+/* mvp + stretch */
+
